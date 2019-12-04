@@ -1,0 +1,45 @@
+/* This file is for your main application css. */
+
+@import "./phoenix.css";
+@import "../../deps/phoenix_live_view/assets/css/live_view.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    max-height: 100vh;
+    background-color: lightcyan;
+}
+
+.child {
+    scroll-snap-align: start;
+    height: 100vh;
+    border: 5px solid black;
+}
+
+body {
+    position: relative;
+}
+
+.top-margin {
+    margin-top: 350px;
+}
+
+#child-1 {
+    background-color: lightgoldenrodyellow;
+}
+
+#child-2 {
+    background-color: lightgray;
+}
+
+#child-3 {
+    background-color: lightgreen;
+}
+
+#child-4 {
+    background-color: lightsalmon;
+}
+
+#child-5 {
+    background-color: lightskyblue;
+}

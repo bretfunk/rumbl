@@ -1,0 +1,29 @@
+<div class="container" data-spy="scroll" data-target="#navbar"> 
+  <h1>Container</h1>
+  <div class="navbar navbar-dark bg-dark float-right flex-column sticky-top d-flex flex-column">
+    <nav id="navbar" class="nav">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#child-1">Child 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#child-2">Child 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#child-3">Child 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#child-4">Child 4</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#child-5">Child 5</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <%= render "child_template1.html", assigns %>
+  <%= render "child_template2.html", assigns %>
+  <%= render "child_template3.html", assigns %>
+  <%= render "child_template4.html", assigns %>
+  <%= render "child_template5.html", assigns %>
+</div>
