@@ -20,8 +20,8 @@ defmodule RumblWeb.Router do
 
     get "/users", UserController, :index
     get "/users/:id", UserController, :show
-
     live("/sales", SalesLive)
+    live("/sos", SosLive)
     get "/", PageController, :index
   end
 

@@ -1,0 +1,44 @@
+<div>
+<h1>Secretary of State Lookup</h1>
+<h3>Select your state</h3>
+<form phx-change="states">
+<select name="state">
+<%= for %{state: state} <- @states do %>
+<option value="<%= state %>"><%= state %></option>
+<% end %>
+</select>
+</form>
+<%= if @state === ""  do %>
+<p>Select a state to get started.</p>
+<% else %>
+
+<%= if has_api(@state) do %>
+
+<h3>API Available</h3>
+
+<form action="#" phx-change="search" >
+  <%= text_input :api, :search, placeholder: "Search For Business Name" %>
+</form>
+<button phx-click="api" phx-value-search="<%= @search %>">Search</button>
+
+<%= for %{BusinessName: biz_name, UBI: ubi} <- @results do  %>
+<table>
+<tr>
+<td><%= biz_name %></td>
+<td><%= ubi %></td>
+</tr>
+</table>
+<% end %>
+
+<% else %>
+
+<h3>API Not Available</h3>
+<p><%= @state %> doesn't have a public Secretary of State api.</p>
+
+<div className="btn btn-primary">
+<%= link "Take Me To #{@state}'s website", to: "#{get_website(@state)}", target: "_blank" %>
+</div>
+
+<% end %>
+<% end %>
+</div>
